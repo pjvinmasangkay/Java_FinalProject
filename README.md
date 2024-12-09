@@ -42,6 +42,26 @@ With a simple, user-friendly application, FinanceWise ensures inclusivity, allow
 
 ## IV. Instructions for running the program
 
+### Prerequisites:
+
+Ensure you have installed the Java Development Kit (JDK).
+
+Install an IDE such as IntelliJ IDEA or Visual Studio Code.
+
+### Setting Up the Project:
+
+Create a new project folder on your local machine.
+Inside the folder, create a directory structure with the following files:
+
+Transaction.java 
+
+Account.java 
+
+FinanceWise.java 
+
+Main.java 
+
+
 Upon starting, the program displays a welcome screen with three options:
 1. **Login**: Enter your username and password to access your account.
 2. **Create Account**: Register a new account with a username and password.
