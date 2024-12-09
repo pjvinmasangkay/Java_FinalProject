@@ -48,29 +48,26 @@ class Account {
         }
     }
 
-    // Load all accounts from a text file
     public static Map<String, Account> loadAccounts() throws IOException {
         Map<String, Account> accounts = new HashMap<>();
         File file = new File("accounts.txt");
         if (!file.exists()) {
-            // Create the file if it doesn't exist
             file.createNewFile();
             System.out.println("accounts.txt file created.");
         } else {
-            // Load existing accounts if the file exists
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
                 String line;
                 Account currentAccount = null;
                 while ((line = reader.readLine()) != null) {
-                    line = line.trim(); // Trim spaces
+                    line = line.trim(); 
                     if (line.startsWith("  ")) {
-                        // This is a transaction line
+                        
                         String[] parts = line.split(",");
                         if (parts.length == 2 && currentAccount != null) {
                             String type = parts[0].trim();
                             double amount = Double.parseDouble(parts[1].trim());
 
-                            // Based on the type, add the correct transaction
+                           
                             if (type.equals("income")) {
                                 currentAccount.addTransaction(new IncomeTransaction(amount));
                             } else if (type.equals("expense")) {
