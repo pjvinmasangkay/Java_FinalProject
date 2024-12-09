@@ -1,4 +1,3 @@
-// abstraction
 abstract class Transaction {
     protected double amount;
 
