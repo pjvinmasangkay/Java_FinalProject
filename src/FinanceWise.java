@@ -4,7 +4,7 @@ import java.util.*;
 class FinanceWise {
     private Map<String, Account> accounts = new HashMap<>();
     private Account currentAccount;
-    private Scanner scanner; // Declare a single Scanner instance
+    private Scanner scanner; 
 
     public FinanceWise() {
         try {
@@ -12,7 +12,7 @@ class FinanceWise {
         } catch (IOException e) {
             System.out.println("Error loading accounts.");
         }
-        scanner = new Scanner(System.in); // Initialize the Scanner instance once
+        scanner = new Scanner(System.in); 
     }
 
     public void createAccount(String username, String password) {
@@ -54,7 +54,7 @@ class FinanceWise {
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -125,7 +125,7 @@ class FinanceWise {
         double totalIncome = 0;
         double totalExpense = 0;
         for (Transaction transaction : currentAccount.getTransactions()) {
-            if (transaction.getType().equalsIgnoreCase("income")) { // Fix case sensitivity
+            if (transaction.getType().equalsIgnoreCase("income")) { 
                 totalIncome += transaction.getAmount();
             } else {
                 totalExpense += transaction.getAmount();
@@ -138,7 +138,7 @@ class FinanceWise {
 
     public void closeScanner() {
         if (scanner != null) {
-            scanner.close(); // Close the Scanner when it is no longer needed
+            scanner.close(); 
         }
     }
 }
